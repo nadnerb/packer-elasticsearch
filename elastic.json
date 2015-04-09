@@ -2,9 +2,8 @@
   "variables": {
     "aws_access_key": "",
     "aws_secret_key": "",
-    "security_group_id": "",
     "aws_region": "ap-southeast-2",
-    "aws_source_ami": "ami-abeb9e91",
+    "aws_source_ami": "ami-69631053",
     "aws_instance_type": "t2.medium",
     "ami_name_prefix": "elasticsearch",
     "elastic_version": "1.5.0"
@@ -17,7 +16,6 @@
     "source_ami": "{{user `aws_source_ami`}}",
     "instance_type": "{{user `aws_instance_type`}}",
     "ssh_username": "ubuntu",
-    "security_group_id": "{{user `security_group_id`}}",
     "ami_name": "{{user `ami_name_prefix`}}-{{timestamp}}"
   }],
   "provisioners": [
