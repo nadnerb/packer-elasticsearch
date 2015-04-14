@@ -21,9 +21,9 @@ Extra variables exposed:
 
 ###Troubleshooting
 
-* Make sure you have set the AWS region and the correct source AMI (Ubuntu/Debian) for that region
+* Make sure you have set the AWS region and the correct source AMI (Ubuntu 14.x recommended) for that region
 * There will no doubt be a few more issues.. hit us up
 
 ###TODO
 
-Templated vagrantfile? The one generated needs to be manually modified.
+Templated Vagrantfile? The one generated needs to be manually modified.
