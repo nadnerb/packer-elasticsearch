@@ -2,4 +2,5 @@
 
 set -e
 
-sudo apt-get install -y vim curl wget
+sudo apt-get update -y
+sudo apt-get install -y vim curl wget unzip

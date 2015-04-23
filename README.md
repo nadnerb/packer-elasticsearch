@@ -3,13 +3,16 @@ Elastic Search AWS AMI with Packer
 
 Install [Packer](https://www.packer.io/) and add it to your PATH.
 
-Create your AMI in AWS, using your access and secret keys.
+Create your elasticsearch AMI in AWS, using your access and secret keys.
+
+This also installs [Consul](https://www.consul.io/). This will need to be configured separately as it would be a good
+idea to join an existing consul cluster.
 
 ```
 packer build \
-	-var 'aws_access_key=your_key' \
-	-var 'aws_secret_key=your_secret' \
-	elastic.json
+  -var 'aws_access_key=your_key' \
+  -var 'aws_secret_key=your_secret' \
+  elastic.json
 ```
 
 Extra variables exposed:
