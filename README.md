@@ -15,6 +15,12 @@ packer build \
   elastic.json
 ```
 
+Or
+
+```
+packer build -var-file='path/to/packer_vars.json' elastic.json
+```
+
 Extra variables exposed:
 
 * aws_region (defaults to `ap-southeast-2`)
