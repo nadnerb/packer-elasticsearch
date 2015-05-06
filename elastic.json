@@ -6,7 +6,9 @@
     "aws_source_ami": "ami-69631053",
     "aws_instance_type": "t2.medium",
     "ami_name_prefix": "elasticsearch",
-    "elastic_version": "1.5.0"
+    "elastic_version": "1.5.2",
+    "aws_vpc_id": "",
+    "aws_subnet_id": ""
   },
   "builders": [{
     "type": "amazon-ebs",
@@ -16,6 +18,8 @@
     "source_ami": "{{user `aws_source_ami`}}",
     "instance_type": "{{user `aws_instance_type`}}",
     "ssh_username": "ubuntu",
+    "vpc_id": "{{user `aws_vpc_id`}}",
+    "subnet_id": "{{user `aws_subnet_id`}}",
     "ami_name": "{{user `ami_name_prefix`}}-{{timestamp}}"
   }],
   "provisioners": [
