@@ -15,5 +15,5 @@ sudo mv /tmp/elasticsearch.yml /etc/elasticsearch/
 
 cd /usr/share/elasticsearch
 sudo chown elasticsearch:elasticsearch -R .
-sudo bin/plugin -i elasticsearch/elasticsearch-cloud-aws/2.5.0
+sudo bin/plugin -i elasticsearch/elasticsearch-cloud-aws/2.7.0
 sudo bin/plugin -i elasticsearch/marvel/latest
