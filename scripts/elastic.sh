@@ -9,6 +9,7 @@ curl -o elastic.deb https://download.elasticsearch.org/elasticsearch/elasticsear
 sudo dpkg -i elastic.deb
 rm elastic.deb
 sudo update-rc.d elasticsearch defaults
+rm /etc/init.d/elasticsearch
 
 cd /usr/share/elasticsearch
 sudo chown elasticsearch:elasticsearch -R .
