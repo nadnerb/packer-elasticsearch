@@ -39,11 +39,6 @@
       "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E '{{ .Path }}'"
     },
     {
-      "type": "file",
-      "source": "config/elasticsearch/elasticsearch.yml",
-      "destination": "/tmp/elasticsearch.yml"
-    },
-    {
       "type": "shell",
       "script": "scripts/elastic.sh",
       "environment_vars": [
