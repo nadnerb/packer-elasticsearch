@@ -7,7 +7,7 @@
     "aws_source_ami": "ami-69631053",
     "aws_instance_type": "t2.medium",
     "ami_name_prefix": "elasticsearch",
-    "elastic_version": "1.7.0",
+    "elastic_version": "1.7.3",
     "aws_vpc_id": "",
     "aws_subnet_id": ""
   },
