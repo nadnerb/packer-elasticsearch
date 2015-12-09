@@ -6,10 +6,12 @@
     "aws_build_regions": "ap-southeast-2",
     "aws_source_ami": "ami-69631053",
     "aws_instance_type": "t2.medium",
+    "aws_vpc_id": "",
+    "aws_subnet_id": "",
     "ami_name_prefix": "elasticsearch",
     "elastic_version": "1.7.3",
-    "aws_vpc_id": "",
-    "aws_subnet_id": ""
+    "consul_version": "0.5.2",
+    "consul_template_version": "0.11.1"
   },
   "builders": [{
     "type": "amazon-ebs",
@@ -18,27 +20,37 @@
     "region": "{{user `aws_region`}}",
     "source_ami": "{{user `aws_source_ami`}}",
     "instance_type": "{{user `aws_instance_type`}}",
-    "ssh_username": "ubuntu",
+    "ssh_username": "ec2-user",
     "vpc_id": "{{user `aws_vpc_id`}}",
     "subnet_id": "{{user `aws_subnet_id`}}",
     "ami_name": "{{user `ami_name_prefix`}}-{{timestamp}}",
-    "ami_regions": "{{user `aws_build_regions`}}"
+    "ami_regions": "{{user `aws_build_regions`}}",
+    "ssh_pty": "true"
   }],
   "provisioners": [
     {
       "type": "shell",
       "script": "scripts/default.sh",
-      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E '{{ .Path }}'"
+      "execute_command": "echo 'ec2-user' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     },
     {
       "type": "shell",
       "script": "scripts/java.sh",
-      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E '{{ .Path }}'"
+      "execute_command": "echo 'ec2-user' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     },
     {
       "type": "shell",
       "script": "scripts/consul.sh",
-      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E '{{ .Path }}'"
+      "environment_vars": [
+            "CONSUL_VERSION={{user `consul_version`}}",
+            "CONSUL_TEMPLATE_VERSION={{user `consul_template_version`}}"
+        ],
+      "execute_command": "echo 'ec2-user' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+    },
+    {
+        "type": "file",
+        "source": "config",
+        "destination": "/tmp"
     },
     {
       "type": "shell",
@@ -46,7 +58,7 @@
       "environment_vars": [
             "ELASTIC_VERSION={{user `elastic_version`}}"
         ],
-      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E '{{ .Path }}'"
+      "execute_command": "echo 'ec2-user' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     }
   ],
   "post-processors": [

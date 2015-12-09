@@ -2,17 +2,8 @@
 
 set -e
 
-sudo apt-get install -y software-properties-common
-sudo add-apt-repository -y ppa:webupd8team/java
-sudo apt-get update
-
-# # Install Java 8
-echo "Accept license"
-echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
-sudo apt-get install -y oracle-java8-installer
-
-# Set default java
-sudo apt-get install oracle-java8-set-default
+wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u66-b17/jdk-8u66-linux-x64.rpm"
+sudo yum localinstall -y jdk-8u66-linux-x64.rpm
 
 echo "Check installation"
 java -version
