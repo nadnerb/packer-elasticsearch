@@ -60,12 +60,5 @@
         ],
       "execute_command": "echo 'ec2-user' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     }
-  ],
-  "post-processors": [
-    {
-      "type":"vagrant",
-      "output": "boxes/packer_{{.BuildName}}_{{.Provider}}.box",
-      "vagrantfile_template": "templates/VagrantFile.template"
-    }
   ]
 }
