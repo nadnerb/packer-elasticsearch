@@ -2,6 +2,7 @@
   "variables": {
     "aws_access_key": "",
     "aws_secret_key": "",
+    "aws_security_token": "",
     "aws_region": "ap-southeast-2",
     "aws_build_regions": "ap-southeast-2",
     "aws_source_ami": "ami-69631053",
@@ -9,14 +10,15 @@
     "aws_vpc_id": "",
     "aws_subnet_id": "",
     "ami_name_prefix": "elasticsearch",
-    "elastic_version": "1.7.3",
-    "consul_version": "0.5.2",
-    "consul_template_version": "0.11.1"
+    "elastic_version": "1.7.4",
+    "consul_version": "0.6.3",
+    "consul_template_version": "0.12.1"
   },
   "builders": [{
     "type": "amazon-ebs",
     "access_key": "{{user `aws_access_key`}}",
     "secret_key": "{{user `aws_secret_key`}}",
+    "token": "{{user `aws_security_token`}}",
     "region": "{{user `aws_region`}}",
     "source_ami": "{{user `aws_source_ami`}}",
     "instance_type": "{{user `aws_instance_type`}}",
