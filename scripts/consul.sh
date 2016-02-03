@@ -5,7 +5,7 @@ set -e
 echo "Fetching Consul..."
 
 cd /tmp
-curl -L -o consul.zip https://dl.bintray.com/mitchellh/consul/${CONSUL_VERSION}_linux_amd64.zip
+curl -L -o consul.zip https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip
 
 echo "Installing Consul..."
 unzip consul.zip >/dev/null
