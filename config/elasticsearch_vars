@@ -1,6 +1,11 @@
 export CLUSTER_NAME="elasticsearch"
 export DATA_DIR="/var/lib/elasticsearch"
+
+# used to cluster by security groups
 export SECURITY_GROUPS=""
+
+# used to cluster by tags
 export ES_ENV=""
+
 export AVAILABILITY_ZONES=""
 export AWS_REGION="ap-southeast-2"

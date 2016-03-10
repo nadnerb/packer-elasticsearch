@@ -3,6 +3,7 @@
 cluster.name: ${CLUSTER_NAME}
 
 network.host: _ec2:privateIpv4_
+data.dir: ${DATA_DIR}
 
 discovery.type: ec2
 discovery.ec2.groups: ${SECURITY_GROUPS}
