@@ -6,15 +6,17 @@ set -e
 elasticsearch_version=$ELASTIC_VERSION
 
 cd /tmp
-curl -o elastic.rpm https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.3.noarch.rpm
+curl -L -o elastic.rpm https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/rpm/elasticsearch/${ELASTIC_VERSION}/elasticsearch-${ELASTIC_VERSION}.rpm
 sudo rpm -Uvh elastic.rpm
 rm elastic.rpm
 
 cd /usr/share/elasticsearch
 sudo chown elasticsearch:elasticsearch -R .
-sudo bin/plugin -i elasticsearch/elasticsearch-cloud-aws/2.7.0
-#sudo bin/plugin -i elasticsearch/marvel/latest
-#sudo bin/plugin -i mobz/elasticsearch-head
+
+# install aws plugin
+sudo yum install -y expect
+sudo chmod +x /tmp/config/awsplugin.sh
+/tmp/config/awsplugin.sh
 
 echo "elasticsearch health check"
 mv /tmp/config/check.py /etc/consul.d/

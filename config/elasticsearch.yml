@@ -2,13 +2,11 @@
 
 cluster.name: ${CLUSTER_NAME}
 
+network.host: _ec2:privateIpv4_
 
 discovery.type: ec2
 discovery.ec2.groups: ${SECURITY_GROUPS}
 discovery.ec2.tag.es_env: ${ES_ENV}
-#discovery.ec2.host_type: "private_dns"
-discovery.ec2.availability_zones: ${AVAILABILITY_ZONES}
-
-plugin.mandatory: cloud-aws
 cloud.aws.region: ${AWS_REGION}
 #cloud.node.auto_attributes: true
+discovery.ec2.availability_zones: ${AVAILABILITY_ZONES}
