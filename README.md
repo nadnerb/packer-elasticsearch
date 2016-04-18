@@ -26,7 +26,7 @@ Extra variables exposed:
 * aws_region (defaults to `ap-southeast-2`)
 * aws_instance_type (defaults to `t2.medium`)
 * ami_name_prefix (defaults to `elasticsearch`)
-* elastic_version (defaults to `1.5.0`)
+* elastic_version (defaults to `2.3.0`)
 
 ###Troubleshooting
 
@@ -35,4 +35,4 @@ Extra variables exposed:
 
 ###TODO
 
-Templated Vagrantfile? The one generated needs to be manually modified.
+* this README is possibly out of date

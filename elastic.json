@@ -10,7 +10,7 @@
     "aws_vpc_id": "",
     "aws_subnet_id": "",
     "ami_name_prefix": "elasticsearch",
-    "elastic_version": "2.2.0",
+    "elastic_version": "2.3.0",
     "consul_version": "0.6.3",
     "consul_template_version": "0.12.1"
   },
