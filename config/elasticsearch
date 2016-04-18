@@ -36,6 +36,8 @@ fi
 #
 if [ -f "/etc/elasticsearch/configurable/elasticsearch_vars" ]; then
     . /etc/elasticsearch/configurable/elasticsearch_vars
+else
+  DATA_DIR=/var/lib/elasticsearch
 fi
 
 # Sets the default values for elasticsearch variables used in this script
@@ -45,7 +47,7 @@ ES_HOME="/usr/share/elasticsearch"
 MAX_OPEN_FILES=65535
 MAX_MAP_COUNT=262144
 LOG_DIR="/var/log/elasticsearch"
-DATA_DIR="/var/lib/elasticsearch"
+DATA_DIR=$DATA_DIR
 CONF_DIR="/etc/elasticsearch"
 
 PID_DIR="/var/run/elasticsearch"

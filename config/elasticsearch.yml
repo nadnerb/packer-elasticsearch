@@ -2,12 +2,12 @@
 
 cluster.name: ${CLUSTER_NAME}
 
-network.host: _ec2:privateIpv4_
-data.dir: ${DATA_DIR}
+# our init.d script sets the default to this as well
+path.data: ${DATA_DIR}
 
+network.host: _ec2:privateIpv4_
 discovery.type: ec2
 discovery.ec2.groups: ${SECURITY_GROUPS}
 discovery.ec2.tag.es_env: ${ES_ENV}
 cloud.aws.region: ${AWS_REGION}
-#cloud.node.auto_attributes: true
 discovery.ec2.availability_zones: ${AVAILABILITY_ZONES}
