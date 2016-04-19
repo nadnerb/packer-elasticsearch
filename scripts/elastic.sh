@@ -18,3 +18,5 @@ sudo chmod +x /tmp/config/awsplugin.sh
 echo "elasticsearch config"
 sudo mkdir -p /etc/elasticsearch/configurable
 mv /tmp/config/* /etc/elasticsearch/configurable
+
+sudo sed -i 's/#MAX_LOCKED_MEMORY=unlimited/MAX_LOCKED_MEMORY=unlimited/' /etc/sysconfig/elasticsearch
