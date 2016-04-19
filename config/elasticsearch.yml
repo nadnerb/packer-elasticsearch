@@ -5,6 +5,7 @@ cluster.name: ${CLUSTER_NAME}
 # our init.d script sets the default to this as well
 path.data: ${DATA_DIR}
 
+bootstrap.mlockall: true
 network.host: _ec2:privateIpv4_
 discovery.type: ec2
 discovery.ec2.groups: ${SECURITY_GROUPS}
