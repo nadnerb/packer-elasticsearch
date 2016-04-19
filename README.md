@@ -21,18 +21,24 @@ Or
 packer build -var-file='path/to/packer_vars.json' elastic.json
 ```
 
-Extra variables exposed:
+## Variables:
 
+* aws_source_ami (defaults to none, please update)
+* aws_access_key (defaults to none, please update)
+* aws_secret_key (defaults to none, please update)
+* aws_security_token (defaults to none)
 * aws_region (defaults to `ap-southeast-2`)
 * aws_instance_type (defaults to `t2.medium`)
 * ami_name_prefix (defaults to `elasticsearch`)
 * elastic_version (defaults to `2.3.0`)
+* aws_build_regions (defaults to none)
+* aws_instance_type (defaults to `t2.medium`)
+* aws_vpc_id (defaults to none)
+* aws_subnet_id (defaults to none)
+* consul_version (defaults to `0.6.3`)
+* consul_template_version (defaults to `0.12.1`)
 
 ###Troubleshooting
 
-* Make sure you have set the AWS region and the correct source AMI (Ubuntu 14.x recommended) for that region
-* There will no doubt be a few more issues.. hit us up
+* Make sure you have set the AWS region and the correct source AMI (Amazon linux recommended) for that region
 
-###TODO
-
-* this README is possibly out of date
