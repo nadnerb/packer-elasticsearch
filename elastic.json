@@ -51,8 +51,8 @@
     },
     {
         "type": "file",
-        "source": "config",
-        "destination": "/tmp"
+        "source": "config/awsplugin.sh",
+        "destination": "/tmp/awsplugin.sh"
     },
     {
       "type": "shell",

@@ -12,7 +12,13 @@ sudo chown elasticsearch:elasticsearch -R .
 
 # install aws plugin
 sudo yum install -y expect
-sudo chmod +x /tmp/config/awsplugin.sh
-/tmp/config/awsplugin.sh
+
+ls -al /tmp/awsplugin.sh
+echo "chmod awsplugin"
+sudo chmod +x /tmp/awsplugin.sh
+echo "running aws plugin"
+/tmp/awsplugin.sh
+echo "done running aws plugin"
+
 
 sudo sed -i 's/#MAX_LOCKED_MEMORY=unlimited/MAX_LOCKED_MEMORY=unlimited/' /etc/sysconfig/elasticsearch
