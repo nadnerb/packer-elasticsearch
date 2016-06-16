@@ -20,5 +20,4 @@ echo "running aws plugin"
 /tmp/awsplugin.sh
 echo "done running aws plugin"
 
-
 sudo sed -i 's/#MAX_LOCKED_MEMORY=unlimited/MAX_LOCKED_MEMORY=unlimited/' /etc/sysconfig/elasticsearch
