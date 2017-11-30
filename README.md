@@ -1,6 +1,9 @@
 Elastic Search AWS AMI with Packer
 =============
 
+>This has not been updated for sometime, the general gist of it should still apply.
+>If anybody wants me to update it, please create an issue.
+
 Install [Packer](https://www.packer.io/) and add it to your PATH.
 
 Create your elasticsearch AMI in AWS, using your access and secret keys.
